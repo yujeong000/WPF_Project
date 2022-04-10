@@ -1,0 +1,14 @@
+from selenium import webdriver
+from bs4 import BeautifulSoup
+import requests #아직 사용안하ㅁ
+
+driver = webdriver.Chrome('C:\\Users\\YJ\\Downloads\\chromedriver_win32\\chromedriver.exe')
+driver.implicitly_wait(3) ## 암묵적으로 웹 자원을 (최대) 3초 기다리기
+## Login
+driver.get('https://ieilms.jbnu.ac.kr') ##로그인 URL로 이동하기
+
+driver.find_element_by_name('login').send_keys('본인아이디')
+driver.find_element_by_name('passwd').send_keys('본인비밀번호')
+
+## 로그인 버튼을 클릭.
+driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input').click()
