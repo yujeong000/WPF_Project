@@ -21,6 +21,7 @@ namespace lms_login
         public MainWindow()
         {
             InitializeComponent();
+
             //커맨드 창 숨김
             ChromeDriverService ser = ChromeDriverService.CreateDefaultService();//이 드라이버를 쓰겟다는 선언
             ser.HideCommandPromptWindow = true;
@@ -52,14 +53,29 @@ namespace lms_login
             //xpath 따올때 큰따옴표를 작은따옴표로 변경!!
             //과목 클릭(자바 프로그래밍)
             driver.FindElement(By.XPath("//*[@id='boardAbox']/form/table/tbody/tr[2]/td[1]/div/table/tbody/tr/td[2]/div[1]")).Click();
-            //
+            //레포트 클릭//*[@id="nav"]/li[5]/a
             driver.FindElement(By.XPath("//*[@id='nav']/li[5]/a")).Click();
-            var notice = driver.FindElements(By.CssSelector(".btr"));
-            foreach(var i in notice)
+
+            // table -> tbody -> tr -> th, td 순으로 찾으면 쉽게 테이블 데이터를 얻을 수 있습니다.
+
+            //table //*[@id="borderB"]  //*[@id="dataList"]/form  
+            //var table = driver.FindElement(By.XPath("//*[@id='borderB']"));
+            ////tbody
+            //var tbody = table.FindElement(By.TagName("tbody"));
+            ////tr
+            //var trs = tbody.FindElement(By.TagName("tr"));
+            Notice.Content+="it is before\n";
+            System.Threading.Thread.Sleep(3000);
+            var element = driver.FindElements(By.CssSelector(".btr"));
+            Notice.Content += "it is after\n";
+            System.Threading.Thread.Sleep(3000);
+
+            foreach (var report in element)
             {
-                NNotice.Content = i.Text;
+                Notice.Content += report.Text;
+                Notice.Content += "\n";
             }
-            
+
 
         }
     }
