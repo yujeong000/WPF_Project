@@ -33,8 +33,8 @@ namespace lms_login
             //학교 lms 링크
             driver.Url = "https://ieilms.jbnu.ac.kr/login/login2.jsp";
 
-            string id = "";
-            string pw = "";
+            string id = "202111680";
+            string pw = "!!wlcks6084";
             //sendkey 에 아이디 비번 입력
             driver.FindElement(By.Name("login")).SendKeys(id);
             driver.FindElement(By.Name("passwd")).SendKeys(pw);
@@ -50,25 +50,27 @@ namespace lms_login
             System.Threading.Thread.Sleep(3000);
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
 
-            //xpath 따올때 큰따옴표를 작은따옴표로 변경!!
+            //@@@@  xpath 따올때 큰따옴표를 작은따옴표로 변경!!
+
             //과목 클릭(자바 프로그래밍)
             driver.FindElement(By.XPath("//*[@id='boardAbox']/form/table/tbody/tr[2]/td[1]/div/table/tbody/tr/td[2]/div[1]")).Click();
+
             //레포트 클릭//*[@id="nav"]/li[5]/a
             driver.FindElement(By.XPath("//*[@id='nav']/li[5]/a")).Click();
+            //기다려주는 요 코드가 없으면 값이 잘 안받아짐=> 아마 exception 빠진것같음 
+            System.Threading.Thread.Sleep(3000);      //=> 따라서 지연시간추가
+            var element = driver.FindElements(By.CssSelector(".b02"));
+            //system.threading.thread.sleep(3000
 
-            // table -> tbody -> tr -> th, td 순으로 찾으면 쉽게 테이블 데이터를 얻을 수 있습니다.
+            ////공지사항 클릭       //*[@id='nav']/li[9]/a
+            //driver.FindElement(By.XPath("//*[@id='nav']/li[9]/a")).Click();
+            //System.Threading.Thread.Sleep(3000);
+            //var element = driver.FindElements(By.CssSelector(".btr"));
 
-            //table //*[@id="borderB"]  //*[@id="dataList"]/form  
-            //var table = driver.FindElement(By.XPath("//*[@id='borderB']"));
-            ////tbody
-            //var tbody = table.FindElement(By.TagName("tbody"));
-            ////tr
-            //var trs = tbody.FindElement(By.TagName("tr"));
-            Notice.Content+="it is before\n";
-            System.Threading.Thread.Sleep(3000);
-            var element = driver.FindElements(By.CssSelector(".btr"));
-            Notice.Content += "it is after\n";
-            System.Threading.Thread.Sleep(3000);
+            ////강의대화 클릭       //*[@id='nav']/li[2]/a
+            //driver.FindElement(By.XPath(" //*[@id='nav']/li[2]/a")).Click();
+            //System.Threading.Thread.Sleep(3000);
+            //var element = driver.FindElements(By.CssSelector(".commText01"));
 
             foreach (var report in element)
             {
