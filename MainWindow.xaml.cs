@@ -78,7 +78,6 @@ namespace lms_login
                 Notice.Content += "\n";
             }
 
-
         }
     }
 }
