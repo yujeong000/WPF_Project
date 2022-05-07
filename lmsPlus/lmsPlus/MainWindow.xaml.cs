@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.EventCalendar;
 
 namespace lmsPlus
 {
@@ -48,7 +49,7 @@ namespace lmsPlus
 
             // add example events
             Events = new List<ICalendarEvent>();
-            Events.Add(new MyCustomEvent() { DateFrom = DateTime.Now, DateTo = DateTime.Now.AddDays(2), Label = "Event 1" });
+            //Events.Add(new MyCustomEvent() { DateFrom = DateTime.Now, DateTo = DateTime.Now.AddDays(2), Label = "Event 1" });
             //Events.Add(new MyCustomEvent() { DateFrom = startDate.AddDays(2), DateTo = startDate.AddDays(5), Label = "Overlapping event 2" });
             //Events.Add(new MyCustomEvent() { DateFrom = startDate.AddDays(4), DateTo = startDate.AddDays(6), Label = "Overlapping event 3" });
             //Events.Add(new MyCustomEvent() { DateFrom = startDate.AddDays(7), DateTo = startDate.AddDays(8), Label = "Event 4" });

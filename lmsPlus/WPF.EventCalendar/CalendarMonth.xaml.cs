@@ -388,8 +388,10 @@ namespace WPF.EventCalendar
             if (CurrentDate.Month == 1)
             {
                 CurrentDate = CurrentDate.AddYears(-1);
+                CurrentDate = CurrentDate.AddMonths(11);
             }
             CurrentDate = CurrentDate.AddMonths(-1);
+
         }
 
         private void NextMonthButton_OnClick(object sender, RoutedEventArgs e)
@@ -397,6 +399,7 @@ namespace WPF.EventCalendar
             if (CurrentDate.Month == 12)
             {
                 CurrentDate = CurrentDate.AddYears(1);
+                CurrentDate = CurrentDate.AddMonths(-11);
             }
             CurrentDate = CurrentDate.AddMonths(1);
         }
