@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lmsPlus", "lmsPlus\lmsPlus.csproj", "{5AC41204-6647-4252-A98C-4E176E9A9D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.EventCalendar", "WPF.EventCalendar\WPF.EventCalendar.csproj", "{F0AF5986-89F9-4987-80DD-BA9F87107A83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AC41204-6647-4252-A98C-4E176E9A9D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC41204-6647-4252-A98C-4E176E9A9D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC41204-6647-4252-A98C-4E176E9A9D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC41204-6647-4252-A98C-4E176E9A9D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AF5986-89F9-4987-80DD-BA9F87107A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AF5986-89F9-4987-80DD-BA9F87107A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AF5986-89F9-4987-80DD-BA9F87107A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AF5986-89F9-4987-80DD-BA9F87107A83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF48264D-8889-48A5-A1EE-A26244E24273}
+	EndGlobalSection
+EndGlobal
